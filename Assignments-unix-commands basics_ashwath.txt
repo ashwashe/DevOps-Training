@@ -97,44 +97,44 @@ Ans: PID: Unique Process ID
      Time: running time
      cmd: name of the command that launched the process. 
 
-
 23. Display the name of the system kernel
-Ans: 
+Ans: uname 
 
 24. display the kernel release number
-	
+Ans: uname -or	
 
-25. display teh machine type of the current kernel
+25. display the machine type of the current kernel
+Ans: cat /proc/version
 	
 26. Display the name of the operating system that the kernel is running on
-	
+Ans: uname - a	
 
 27. Display all info that uname command can show.
-	
+Ans: Operating System Name
 
 28. Display the name of directory that you are currently pointing to
-	
+Ans: pwd
 
 29. change the current directory to another directory that you have in your system.
-	
+Ans: cd 'dir name'
 
 30. Go up one directory
-	
+Ans: cd ..
 
 31. Return to last directory
-	
+Ans: cd -
 
 32. change the current directory to home(logged in user's) directory
-	
+Ans: cd
 
 33. How to check all the command used from the prompt (Command History)
-	
+Ans: history
 
 34. In which file the history of commands are stored in?
-	
+Ans: .bash_history
 
 35. How many lines of history does the system keep and from where you can change it?
-	
+Ans: 	
 
 36. How can you modify bash's history behaviour
 	
