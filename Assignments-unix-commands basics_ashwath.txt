@@ -57,7 +57,7 @@ Ans: cd 'directory name'
 Ans: env	
 
 11. Did you notice something in the output of "env" command?
-Ans: Yes
+Ans: Yesz
 
 	
 12. Which command is used to print the text or any variables value in the Console/Terminal?
@@ -73,7 +73,7 @@ Ans: Yes
 Ans: No	
 
 16. Display your currently logged in user
-Ans: w	
+Ans: whoami	
 
 17. how do you change the currrently logged in user to another user?
 Ans: su
@@ -88,7 +88,7 @@ Ans: reboot
 Ans: shutdown			 
 
 21. Display all the major running processes in the system
-Ans: ps
+Ans: ps - ef / top
 	
 
 22. Understand the output of command used in above question of displaying processes, explain the meaning of each column and what data it displays?
@@ -101,7 +101,7 @@ Ans: PID: Unique Process ID
 Ans: uname 
 
 24. display the kernel release number
-Ans: uname -or	
+Ans: uname -r	
 
 25. display the machine type of the current kernel
 Ans: cat /proc/version
@@ -134,96 +134,118 @@ Ans: history
 Ans: .bash_history
 
 35. How many lines of history does the system keep and from where you can change it?
-Ans: 	
+Ans: hist control	
 
 36. How can you modify bash's history behaviour
-	
+Ans: 	
 
 37. Display all the commands entered so far, now, try to run a particular command from the history list without typing that command.
-	
+Ans: $ plus the number of history	
 
-NOTE:- TAB key is your friend when it comes to command completion and having long file and directory names autocompleted at the bash prompt for you. JUST BE LAZY AND USE TAB KEY FOR AUTO COMPLETION ;-)
-
+NOTE:- TAB key is your friend when it comes to command completion and having long file and directory names autocompleted 
+at the bash prompt for you. JUST BE LAZY AND USE TAB KEY FOR AUTO COMPLETION ;-)
 
 38. What are the different types of shell and where are they used and how do we use them?
-	
+Ans: login shell and non login shell 
 
 39. What is the difference between login shell and non-login shell?
+Ans: If you open a shell or terminal (or switch to one), and it asks you to log in (Username? Password?) before it gives you a prompt, it's a login shell.
+     If it doesn't (like gnome-terminal), and lets you use it straight away, it's a non-login shell.
 	
 40. How do we start login shell and non-login shell?
+Ans: Todo
+
 
 41. What happens when you start a login shell (which files are read and used and Why)?
+Ans: Todo
 
 42. What happens when you start a non-login shell (Which files are read and used and Why)?
+Ans: Todo
 
 39. What are Shell Configuration Files, why do we need it?
+Ans: Todo
 
 40. Explain the Order of file usage from the system/user's home directory when user logs in to the System.
-
+Ans: 
 
 41. What are Shell Variables, list major shell variables and what do they represent?
+Shell variables can be constant variables or env variables.
+Eg: PATH,PS1
 	
 42. How we see all our env variables?
-	
+Ans: env
 
 43. How we see all env variables in alphabical order?
-	
+Ans: printenv | sort
  
 44. What Format does the env var and its values are stored?
-	
+Ans: Todo
 
 45. How do you create your own varible?
-	
+Ans: Test="Hello World"
 
 46. How do you start a new bash shell?
-	
+Ans: Todo
 
 47. Difference between Local/Shell variables to Global Variable
-
+Ans: Todo
 
 48. Making a variable accessible from other the shell in the system.
-	
+Ans: Todo
 
 49. Show the real life use case of exporting a variable
-	
+Ans: Todo	
 
 50. Convert the above script file into a command, The file should run with "myappp" instead of "myapp.sh"
+Ans: Todo
 
 51. What is Globbing? Explain in depth with examples?
+Ans: Todo
 
 52. List all entries with extension ".sh"
+Ans: ls *.sh
 
-53. List all entries with numbers in it.
+53. List all entries with numbers in it
+Ans: Todo
 
 54. List all entries that starts with a character and ends with a number
+Ans: Todo
 
 55. List all entries that name length more than 5 characters
+Ans: Todo
 
 56. What is Quoting? and Why do we need it?
+Ans: Todo
 
 57. Write few(minimum 3) unique examples that shows, how a particular problem is solved using Quoting.
+Ans: 
 
 58. How do you find a particular files/directories based on a particular search criteria?
 	HINT:- look for commands -> locate, find and whereis
 
 59. Write major difference between locate, find and whereis?
+Ans: find : find the files by name | whereis is the location of the software | locate is for global search on the system
 
 60. How Globbing is different from locate, find and whereis?
+Ans: 
 
 61. Explain the Linux File System.
+Ans: Todo
 
 62. Explain absolute and Relative Paths
+Ans: Absolute : points to the specific location in the file sytem
+	Relative path : points to a location of a directory using current directory as a reference.
 
 63. What are the different ways of creating a File in linux System? Write an example of each and the difference between them.
+Ans: vi and nano editors
 
 64. In how many ways we can delete the files from linux system? write an example of each and teh difference between them.
+Ans: rm : rm myfile.sh
+rmdir : delete an empty directory 
+rm -r : To delete a directory and all of its contents recursively
 
 65. Archiving files using linux command, write a command to archive set of files from linux commands.
+Ans: tar cf myfile.tar myfile.sh
 
 66. Extract the archived files from the above step.
-
-
-
-
-
-
+Ans: tar xf myfile.tar
