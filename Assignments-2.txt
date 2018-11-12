@@ -81,26 +81,26 @@ Ans: grep -m3 mya <filename>
 Ans: grep -o as <filename> | wc -l
 
 8. Use plato_republic.txt file, and display all the line that starts with "Republic".
-Ans: grep ^Republic plato_republic.txt
+Ans: grep ^Republic plato_republic.sh
 
 9. Use Plato_republic.txt file, and display all the lines that ends with "Republic".
-Ans: grep $'Republic' plato_republic.txt
+Ans: grep $'Republic' plato_republic.sh
 
 
 10. Use plato_republic.txt file, and display the number of lines that has word "republic".
-Ans: grep 'republic' plato_republic.txt | wc -l
+Ans: grep -n 'republic' plato_republic.sh | wc -l
 
 11. Use plato_republic.txt file, and display all the lines that begins with either a or A or b or B
-Ans: grep -i '^[ab]' plato_republic.txt
+Ans: grep -i '^[ab]' plato_republic.sh
 
 12. Use plato_republic.txt file, and display all the lines that does not begins with either a or A or b or B
-Ans: grep -i '^[^ab]' plato_republic.txt
+Ans: grep -i '^[^ab]' plato_republic.sh
  
 13. Use plato_republic.txt file, and display all the lines that has "h" or "H" as the second character.
-Ans: grep -i '^.h' plato_republic.txt
+Ans: grep -i '^.h' plato_republic.sh
 
 14. Use plato_republic.txt file, and display all the lines that has internet web address
-Ans: grep -i 'www.' plato_republic.txt
+Ans: grep -i 'www.' plato_republic.sh
 
 15. Sort the listing of a directory "/etc" so that all the directories are listed first.
 Ans: ls -l | sort -k1
@@ -110,7 +110,7 @@ Ans: ls -l | sort -k1
 Ans: ls -l | less
 
 17. Identify all files in your home directory which the group has write permission for.
-Ans: Tod
+Ans: Todo
 
 18. Create a listing of every user which owns a file in a given directory as well as how many files and directories they own.
 Ans: Todo
@@ -125,28 +125,58 @@ Let's play with some patterns.
 
 1. A good directory to play with is /etc which is a directory containing config files for the system. As a normal user you may view the files but you can't make any changes so we can't do any harm. Do a listing of that directory to see what's there. Then pick various subsets of files and see if you can create a pattern to select only those files.
 
-2. Do a listing of /etc with only files that contain an extension.
+2. Do a listing of /etc with only files that contain an extension
+Ans: find . -type f -name '*.*'
 
 3. What about only a 3 letter extension?
+Ans: find . -type f -name '*.???'
 
 4. How about files whose name contains an uppercase letter? (hint: [[:upper:]] may be useful here)
+Ans: ls -d -- *[[:upper:]]*
 
 5. Can you list files whose name is 4 characters long?
-
+Ans: find . -type f -name '????.*'
 
 ----Activities
 Let's mangle some data. You can use the plato_republic.txt file
 
 1. Now play with each of the programs below. Make sure you use both relative and absolute paths.
 	head
+	Ans :head -15 plato_republic.sh - get 15 lines from the file
+		 head -c 5 plato_republic.sh - get the 5 bytes of lines 
+		 
 	tail
+	Ans: tail -15 plato_republic.sh
+		  tail -c 5 plato_republic.sh
+	
 	sort
+	Ans: sort plato_republic.sh - sort the whole file
+		 sort plato_republic.sh > plato_republic1.sh copy sorted data to another file.
+	
 	nl
+	Ans: 
+	
 	wc
+	Ans : wc plato_republic.sh -- 
+		  wc -w plato_republic.sh --- get the word count
+		  wc -l plato_republic.sh --- number of lines
+		  
 	cut
+	Ans: cut -b 1- plato_republic.sh
+		 cut --version
+
+	
 	sed
-	uniq
+	Ans: 
+	
+	
+	uniq : 
+	Ans: uniq myfile.sh
+		 uniq -c myfile.sh
+	
 	tac
+	Ans: tac myfile.sh
+		 tac -b myfile.sh
 
 Have a look at the man page for each of the programs and try at least 2 of the command line options for them.
 
@@ -160,7 +190,8 @@ Let's identify some information. You can use the plato_republic.txt file
 
 2. Have a look at the man page for "egrep" and try atleast 2 of the command line options for them.
 
-
+Ans : egrep '^[a-zA-Z]' myfile.sh
+	  egrep -c '^begin|end$' myfile.sh
 
 
 
