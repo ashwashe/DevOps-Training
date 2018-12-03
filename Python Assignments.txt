@@ -61,6 +61,8 @@ if x == 2:
 else:
 	x +
 
+Ans: SyntaxError: Missing parentheses in call to 'print'. Did you mean print(x)?
+Python3 requires syntax with parantheses for print statement
 
 Question:
 Write a program add.py that takes 2 numbers as command line arguments and prints its sum.as follows:-
@@ -95,6 +97,26 @@ Example: 81 ? 8 + 1 = 9 ? 81/9 = 9 ? Harshad!
 True
 Hint: convert the number to a string
 
+Ans: 
+
+def isharshad(str1):
+    index = 0
+    sum1 = 0
+    while index < len(str1):
+      letter = str1[index]
+      sum1 = sum1 + int(letter)
+      index = index + 1
+      print(letter)
+      print(sum1)
+    q = int(str1)%sum1
+    print(q)
+    if int(q) == 0:
+        print("True")
+    else:
+        print("Not True")
+
+
+isharshad("81")
 
 
 
@@ -105,6 +127,12 @@ The numbers obtained should be printed in a comma-separated sequence on a single
 Hints: 
 Consider use range(#begin, #end) method
 
+Ans: 
+numberlist = []
+for i in range(2000,3201):
+    if i%7 == 0 and i%5 != 0:
+        numberlist.append(i)
+print(numberlist)
 
 
 
@@ -119,10 +147,18 @@ Then, the output should be:
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+Ans: 
 
+import sys
+import math as m
 
+def main():
+    f=int(sys.argv[1])
+    f1=m.factorial(f)
+    print(f1)
 
-
+if __name__ == "__main__":
+    main()
 
 
 Question:
@@ -135,7 +171,13 @@ Then, the output should be:
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 Consider use dict()
+Ans: 
 
+dict = {}
+n=sys.argv[1]
+for i in range(0,int(n)+1):
+    dict[i]=i*i
+print(dict)
 
 
 
@@ -153,6 +195,13 @@ Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 tuple() method can convert list to tuple
 
+Ans: 
+values = input("Input some comma seprated numbers : ")
+list = values.split(",")
+tuple = tuple(list)
+print('List : ',list)
+print('Tuple : ',tuple)
+
 
 
 
@@ -165,8 +214,12 @@ As an example the problem number 16 can be solved in one line of Python:
 >>> sum(map(int, list(str(2**1000))))
 1366
 
+Problem 21
 
 
+import math
+x=math.factorial(100)
+sum(map(int,str(x)))
 
 Question:
 Define a class which has at least two methods:
@@ -177,9 +230,21 @@ Also please include simple test function to test the class methods.
 Hints:
 Use __init__ method to construct some parameters
 
+Ans: 
 
+class String2:
+    str1=""
 
+    def printString(self):
+        print(self.str1)
 
+    def getString1(self):
+        str1=input("enter string")
+        return str1
+
+str2=String2()
+str2.str1=str2.getString1()
+str2.printString()
 
 
 Question:
@@ -198,7 +263,22 @@ Hints:
 If the output received is in decimal form, it should be rounded off to its nearest value (for example, if the output received is 26.0, it should be printed as 26)
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+Ans: 
 
+import math
+
+def squareroot(n):
+    x = 2*50*int(n)/30
+    h = math.sqrt(x)
+    return h
+
+y = input("Enter numbers separated by comma: ")
+list = y.split(",")
+n = []
+for i in list:
+    n.append(int(squareroot(i)))
+
+print(n)
 
 
 
@@ -215,7 +295,24 @@ Then, the output of the program should be:
 Hints:
 Note: In case of input data being supplied to the question, it should be assumed to be a console input in a comma-separated form.
 
+Ans:
 
+from array import *
+
+x = input("enter dimension:")
+list = x.split(",")
+name = []
+row = int(list[0])
+col = int(list[1])
+print(name)
+print("hello")
+for i in range(row):
+    column=[]
+    for j in range(col):
+        column.append(i*j)
+    name.append(column)
+
+print(name)
 
 
 
@@ -232,7 +329,12 @@ bag,hello,without,world
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
-
+Ans: 
+words=input("Enter words separated by commas ")
+list1 = []
+list1 = words.split(",")
+list1.sort()
+print(list1)
 
 
 
@@ -253,7 +355,10 @@ PRACTICE MAKES PERFECT
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+Ans:
 
+sentence = input("Enter a sentence: ")
+print(sentence.upper())
 
 
 
@@ -269,6 +374,16 @@ Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 We use set container to remove duplicated data automatically and then use sorted() to sort the data.
 
+Ans: 
+
+ip = input("Enter words  to remove duplicates: ")
+print(ip)
+s = ip.split(" ")
+print(s)
+t = set(s)
+u=list(t)
+u.sort()
+print(u)
 
 
 
@@ -285,6 +400,16 @@ Notes: Assume the data is input by console.
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+Ans: 
+
+x = input("Enter Binary Numbers : ")
+y = x.split(",")
+z=[]
+for i in y:
+    if int(i,2)%5 == 0:
+        z.append(i)
+
+print(z)
 
 
 
@@ -296,7 +421,19 @@ The numbers obtained should be printed in a comma-separated sequence on a single
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+Ans: 
 
+z=[]
+for i in range(1000,3000):
+    d = [int(x) for x in str(i)]
+    n=0
+    for j in d:
+        if j%2 == 0:
+            n=n+1
+    if n==4:
+        z.append(i)
+
+print(z)
 
 
 
@@ -311,8 +448,19 @@ DIGITS 3
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+Ans: 
 
-
+s = input("Input a string")
+d=l=0
+for c in s:
+    if c.isdigit():
+        d=d+1
+    elif c.isalpha():
+        l=l+1
+    else:
+        pass
+print("Letters", l)
+print("Digits", d)
 
 
 
@@ -327,6 +475,19 @@ LOWER CASE 9
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+Ans: 
+
+s = input("Input a string")
+u=l=0
+for c in s:
+    if c.isupper():
+        u=u+1
+    elif c.islower():
+        l=l+1
+    else:
+        pass
+print("Upper", u)
+print("Lower", l)
 
 
 
@@ -342,7 +503,16 @@ Then, the output should be:
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+Ans: 
 
+a=input("Enter a number from 1 to 9")
+s = [1,11,111,1111]
+list1 = [x * int(a) for x in s]
+sum1=0
+for j in list1:
+    sum1=sum1+j
+
+print(sum1)
 
 
 
@@ -358,6 +528,16 @@ Then, the output should be:
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+Ans:
+
+x = input("Enter numbers separated by commas : ")
+list1 = x.split(",")
+list2 = []
+for x in list1:
+    if int(x)%2 !=0:
+        list2.append(int(x)*int(x))
+
+print(list2)
 
 
 
@@ -379,7 +559,19 @@ Then, the output should be:
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+Ans: 
 
+t=int(input("Enter number of lines to be input"))
+total=0
+while t!=0:
+    c, n=input().split()
+    n=int(n)
+    if c=='D':
+        total+=n
+    elif c=='W':
+        total-=n
+    t-=1
+print(total)
 
 
 
@@ -402,6 +594,31 @@ ABd1234@1
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+Ans:
+
+import re
+str1= input("Input your password").split(",")
+x = True
+y=[]
+for p in str1:
+    while x:
+        if (len(p)<6 or len(p)>12):
+            break
+        elif not re.search("[a-z]",p):
+            break
+        elif not re.search("[0-9]",p):
+            break
+        elif not re.search("[A-Z]",p):
+            break
+        elif not re.search("[$#@]",p):
+            break
+        elif re.search("\s",p):
+            break
+        else:
+            y.append(p)
+            x=False
+            break
+print(y)
 
 
 
@@ -426,6 +643,22 @@ Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 We use itemgetter to enable multiple sort keys.
 
+Ans: 
+
+import operator
+x = True
+a=[]
+while x:
+    y=input("Enter name age and score<comma-separated>. Press n to stop ")
+    y1=y.split(",")
+    if y=='n':
+        break
+    else:
+        a.append(y1)
+
+a.sort(key=lambda r:r[0])
+a.sort(key=operator.itemgetter(0,1,2))
+print(a)
 
 
 
@@ -437,7 +670,16 @@ Define a class with a generator which can iterate the numbers, which are divisib
 Hints:
 Consider use yield
 
+Ans:
 
+class Generate:
+    def divby7(self, n):
+        x = list(i for i in range(n) if i%7==0)
+        print(x)
+
+g=Generate()
+n=int(input("Enter n: "))
+g.divby7(n)
 
 
 Question:
@@ -460,7 +702,33 @@ Then, the output of the program should be:
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+Ans:
 
+import math
+x = True
+a=[]
+t=0
+while x:
+    y=input("Enter UP DOWN LEFT RIGHT with value. To stop press n ")
+    y1 = y.split()
+    if y=='n':
+        break
+    else:
+        a.append(y1)
+        t+=1
+xcor=0
+ycor=0
+for i in a:
+    if i[0]=='UP':
+        ycor += int(i[1])
+    elif i[0]=='DOWN':
+        ycor -= int(i[1])
+    elif i[0]=='LEFT':
+        xcor+=int(i[1])
+    elif i[0]=='RIGHT':
+        xcor-=int(i[1])
+dist=math.sqrt(xcor**2 + ycor**2)
+print("Distance: ",int(dist))
 
 
 
@@ -486,6 +754,15 @@ Hints
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
 
+Ans:
+
+g=input("Enter string:")
+l=g.split()
+freq=[l.count(i) for i in l]
+d=dict(zip(l,freq))
+s=sorted(d)
+ls={j:d[j] for j in s}
+print(ls)
 
 
 
@@ -495,7 +772,12 @@ Question:
 Hints:
     Using the ** operator
 
+Ans:
 
+def square(n):
+    return n**2
+n=input("Enter number")
+print("Square",square(int(n)))
 
 
 
@@ -507,7 +789,12 @@ Question:
 Hints:
     The built-in document method is __doc__
 
+Ans:
 
+def myfunc():
+    """'myfunc' this is help."""
+
+print(myfunc.__doc__)
 
 
 
@@ -519,7 +806,15 @@ Hints:
     You can init a object with construct parameter or set the value later
 
 
+Ans:
+class A:
+    a="I am a class attribute"
 
+x=A()
+x.a="I am instance attribute"
+print("Instance x",x.a)
+y=A()
+print("Instance y", y.a)
 
 
 
@@ -529,7 +824,14 @@ Define a function which can compute the sum of two numbers.
 Hints:
 Define a function with two numbers as arguments. You can compute the sum in the function and return the value.
 
+Ans:
 
+def sum1(a,b):
+    return a+b
+
+a=input("First number: ")
+b=input("Second number:")
+print("Sum:", sum1(int(a),int(b)))
 
 
 Question:
@@ -539,6 +841,13 @@ Hints:
 
 Use str() to convert a number to string.
 
+Ans:
+
+def string1(n):
+    return str(n)
+	
+x = 1
+print(string1(x))
 
 
 
@@ -548,7 +857,13 @@ Hints:
 
 Use int() to convert a string to integer.
 
+Ans:
 
+def int1(n):
+    return int(n)
+	
+x = "123"
+print(int1(x))
 
 
 
@@ -558,7 +873,14 @@ Define a function that can accept two strings as input and concatenate them and 
 Hints:
 
 Use + to concatenate the strings
+Ans:
 
+def concatenate(str1,str2):
+    return str1+str2
+
+x=input("First string")
+y=input("Second string")
+print(concatenate(x,y))
 
 
 
@@ -570,7 +892,19 @@ Hints:
 
 Use len() function to get the length of a string
 
+Ans:
 
+def length(str1,str2):
+    if len(str1)>len(str2):
+        return str1
+    elif len(str1)<len(str2):
+        return str2
+    else:
+        return str1+str2
+
+x=input("First string")
+y=input("Second string")
+print(length(x,y))
 
 
 
@@ -581,7 +915,14 @@ Hints:
 
 Use % operator to check if a number is even or odd.
 
+def oddeven(n):
+    if n%2==0:
+        print("This is an even number")
+    else:
+        print("This is an odd number")
 
+x=input("Enter a number")
+oddeven(int(x))
 
 
 
@@ -594,6 +935,16 @@ Hints:
 Use dict[key]=value pattern to put entry into a dictionary.
 Use ** operator to get power of a number.
 
+Ans:
+
+def sqdict():
+    x=[1,2,3]
+    dict1={}
+    for i in x:
+        dict1[i]=i**2
+    print(dict1)
+
+sqdict()
 
 
 
@@ -607,7 +958,15 @@ Use dict[key]=value pattern to put entry into a dictionary.
 Use ** operator to get power of a number.
 Use range() for loops.
 
+Ans:
 
+def sqdict():
+    dict1={}
+    for i in range(21):
+        dict1[i]=i**2
+    print(dict1)
+
+sqdict()
 
 
 
@@ -621,7 +980,15 @@ Use ** operator to get power of a number.
 Use range() for loops.
 Use keys() to iterate keys in the dictionary. Also we can use item() to get key/value pairs.
 
+Ans:
 
+def sqdict():
+    dict1={}
+    for i in range(21):
+        dict1[i]=i**2
+    print(dict1.values())
+
+sqdict()
 
 
 
@@ -635,6 +1002,15 @@ Use ** operator to get power of a number.
 Use range() for loops.
 Use keys() to iterate keys in the dictionary. Also we can use item() to get key/value pairs.
 
+Ans:
+
+def sqdict():
+    dict1={}
+    for i in range(21):
+        dict1[i]=i**2
+    print(dict1.keys())
+
+sqdict()
 
 
 
@@ -649,6 +1025,15 @@ Use ** operator to get power of a number.
 Use range() for loops.
 Use list.append() to add values into a list.
 
+Ans:
+
+def sqlist():
+    list1=[]
+    for i in range(21):
+        list1.append(i**2)
+    print(list1)
+
+sqlist()
 
 
 
@@ -662,10 +1047,15 @@ Use range() for loops.
 Use list.append() to add values into a list.
 Use [n1:n2] to slice a list
 
+Ans:
 
+def sqlist():
+    list1=[]
+    for i in range(21):
+        list1.append(i**2)
+    print(list1[0:5])
 
-
-
+sqlist()
 
 
 Question:
@@ -677,6 +1067,9 @@ Use ** operator to get power of a number.
 Use range() for loops.
 Use list.append() to add values into a list.
 Use [n1:n2] to slice a list
+
+Ans:
+
 
 
 
@@ -708,6 +1101,15 @@ Use range() for loops.
 Use list.append() to add values into a list.
 Use tuple() to get a tuple from a list.
 
+Ans: 
+
+def sqlist():
+    list1=[]
+    for i in range(21):
+        list1.append(i**2)
+    print(tuple(list1))
+
+sqlist()
 
 
 
@@ -720,6 +1122,12 @@ Hints:
 
 Use [n1:n2] notation to get a slice from a tuple.
 
+Ans: 
+
+t=(1,2,3,4,5,6,7,8,9,10)
+print(t[0:5])
+print(t[5:])
+
 
 
 
@@ -730,7 +1138,11 @@ Hints:
 
 Use "for" to iterate the tuple
 Use tuple() to generate a tuple from a list.
+Ans:
 
+t=(1,2,3,4,5,6,7,8,9,10)
+t2=[i for i in t if i%2==0]
+print(tuple(t2))
 
 
 
@@ -741,6 +1153,13 @@ Hints:
 
 Use if statement to judge condition.
 
+Ans:
+
+x=input("Enter yes or no")
+if x.lower()=='yes':
+    print("Yes")
+else:
+    print("No")
 
 
 
@@ -752,6 +1171,11 @@ Hints:
 Use filter() to filter some elements in a list.
 Use lambda to define anonymous functions.
 
+Ans:
+
+my_list=[1,2,3,4,5,6,7,8,9,10]
+my_list = list(filter(lambda x: x%2==0, my_list))
+print(my_list)
 
 
 
@@ -765,7 +1189,10 @@ Hints:
 Use map() to generate a list.
 Use lambda to define anonymous functions.
 
-
+Ans:
+items = [1, 2, 3, 4, 5,6,7,8,9,10]
+squared = list(map(lambda i:i**2,items))
+print(squared)
 
 
 
@@ -778,6 +1205,10 @@ Use map() to generate a list.
 Use filter() to filter elements of a list.
 Use lambda to define anonymous functions.
 
+items = [1, 2, 3, 4, 5,6,7,8,9,10]
+even = list(filter(lambda x:x%2==0,items))
+squared = list(map(lambda i:i**2,even))
+print(squared)
 
 
 
@@ -789,6 +1220,9 @@ Hints:
 Use filter() to filter elements of a list.
 Use lambda to define anonymous functions.
 
+my_list=range(21)
+my_list = list(filter(lambda x: x%2==0, my_list))
+print(my_list)
 
 
 
@@ -800,6 +1234,10 @@ Hints:
 Use map() to generate a list.
 Use lambda to define anonymous functions.
 
+Ans:
+items = range(21)
+squared = list(map(lambda i:i**2,items))
+print(squared)
 
 
 
@@ -811,7 +1249,15 @@ Hints:
 
 Use @staticmethod decorator to define class static method.
 
+Ans:
 
+class American:
+
+    @staticmethod
+    def printNationality():
+        return "American"
+
+print('Nationality is', American.printNationality())
 
 
 
@@ -821,6 +1267,24 @@ Define a class named American and its subclass NewYorker.
 Hints:
 
 Use class Subclass(ParentClass) to define a subclass.
+
+Ans:
+
+class American:
+    name="American"
+    def getName(self):
+        print(self.name)
+
+class Newyorker(American):
+    def getName(self):
+        print(self.name)
+
+a=American()
+a.getName()
+
+b=Newyorker()
+b.name="Hello"
+b.getName()
 
 
 
@@ -832,6 +1296,21 @@ Hints:
 
 Use def methodName(self) to define a method.
 
+Ans:
+
+import math
+class Circle:
+    r=0
+    def __init__(self,r):
+        self.r=r
+    def area(self):
+        return self.r*math.pi*self.r
+
+x=input("Enter radius")
+s=Circle(int(x))
+
+y=s.area()
+print("Area : ",y)
 
 
 
@@ -842,6 +1321,23 @@ Hints:
 
 Use def methodName(self) to define a method.
 
+Ans:
+
+class Rectangle:
+    l=0
+    b=0
+    def __init__(self,l,b):
+        self.l=l
+        self.b=b
+    def area(self):
+        return self.l*self.b
+
+x=input("Enter length and breadth separated by commas")
+y=x.split(",")
+s=Rectangle(int(y[0]),int(y[1]))
+a=s.area()
+print("Area :",a)
+
 
 
 Question:
@@ -851,7 +1347,23 @@ Hints:
 
 To override a method in super class, we can define a method with the same name in the super class.
 
+Ans: 
+class Shape:
+    l = 0
+    def area(self):
+        return 0
 
+class Square(Shape):
+    def __init__(self,l):
+        self.l=l
+    def area(self):
+        return self.l*self.l
+
+x=input("Enter length")
+s=Square(int(x))
+
+y=s.area()
+print(y)
 
 
 Question:
@@ -869,6 +1381,8 @@ Write a function to compute 5/0 and use try/except to catch the exceptions.
 Hints:
 
 Use try/except to catch exceptions.
+
+Ans:
 
 
 
@@ -893,7 +1407,12 @@ Hints:
 
 Use \w to match letters.
 
+Ans:
 
+import re
+x=input("Email ID: ")
+y=re.findall("^\w+",x)
+print(y)
 
 
 
@@ -1382,8 +1901,3 @@ We count 35 heads and 94 legs among the chickens and rabbits in a farm. How many
 
 Hint:
 Use for loop to iterate all possible solutions.
-
-
-
-
-
