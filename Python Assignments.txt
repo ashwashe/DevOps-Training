@@ -1442,6 +1442,14 @@ Hints:
 Use re.findall() to find all substring using regex.
 
 
+Ans:
+
+import re
+x=input("Text")
+list=[i for i in x if i.isdigit()]
+print(list)
+y=re.findall("([0-9]*)",x)
+print(y)
 
 
 
@@ -1455,11 +1463,10 @@ Hints:
 
 Use u'strings' format to define unicode string.
 
-
-
-
-
-
+Ans:
+x=u'Hello World'
+utf8_encoded = x.encode('utf-8')
+print(utf8_encoded)
 
 
 Write a program to read an ASCII string and to convert it to a unicode string encoded by utf-8.
@@ -1468,6 +1475,10 @@ Hints:
 
 Use unicode() function to convert.
 
+Ans:
+x=input("test string")
+utf8_encoded = x.encode('utf-8')
+print(utf8_encoded)
 
 
 
@@ -1488,7 +1499,16 @@ In case of input data being supplied to the question, it should be assumed to be
 Hints:
 Use float() to convert an integer to a float
 
+Ans:
 
+def fun(n):
+    if n == 1:
+        return 0.5
+    else:
+        return fun(n-1) + float(n/(n+1))
+
+x = input("Enter n :")
+print(fun(float(x)))
 
 
 
@@ -1516,7 +1536,16 @@ In case of input data being supplied to the question, it should be assumed to be
 Hints:
 We can define recursive function in Python.
 
+Ans:
 
+def fun(n):
+    if n == 0:
+        return 1
+    else:
+        return fun(n-1) + 100
+
+x = input("Enter n :")
+print(fun(int(x)))
 
 
 
@@ -1545,6 +1574,18 @@ In case of input data being supplied to the question, it should be assumed to be
 Hints:
 We can define recursive function in Python.
 
+Ans:
+
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+x = input("Enter n for fibonacci :")
+print(fib(int(x)))
 
 
 
@@ -1567,13 +1608,12 @@ Use yield to produce the next value in generator.
 
 In case of input data being supplied to the question, it should be assumed to be a console input.
 
+Ans: 
 
-
-
-
-
-
-
+x = input("Enter n: ")
+list1=range(int(x))
+a=list(i for i in list1 if i%35==0)
+print(a)
 
 
 Question:
@@ -1584,9 +1624,7 @@ Please write assert statements to verify that every number in the list [2,4,6,8]
 Hints:
 Use "assert expression" to make assertion.
 
-
-
-
+Ans: 
 
 
 
@@ -1607,11 +1645,9 @@ Hints:
 Use eval() to evaluate an expression.
 
 
-
-
-
-
-
+Ans:
+x = input("Enter expression : ")
+print(eval(x))
 
 Question:
 
@@ -1621,7 +1657,31 @@ Please write a binary search function which searches an item in a sorted list. T
 Hints:
 Use if/elif to deal with conditions.
 
+Ans:
 
+list1=[1,2,3,5,6,7,8]
+y = input("Enter element to be searched between 1 to 8")
+x=int(y)
+beg=0
+end=len(list1)
+n=int(beg+(end-beg)/2)
+z=-1
+print(beg,n,end)
+if x < list1[0] or x > list1[len(list1)-1]:
+    print("Not Found")
+else:
+    while beg <= end:
+        if x == list1[n]:
+            print("Element found at ",n)
+            z = n
+            break
+        elif list1[n] < x:
+            beg = n + 1
+        else:
+            end = n - 1
+        n=int(beg+(end-beg)/2)
+if z == -1:
+    print("Element not found")
 
 
 
@@ -1651,11 +1711,9 @@ Please generate a random float where the value is between 10 and 100 using Pytho
 Hints:
 Use random.random() to generate a random float in [0,1].
 
-
-
-
-
-
+Ans:
+import random
+print(random.uniform(10,100))
 
 
 Question:
@@ -1667,7 +1725,13 @@ Please write a program to output a random even number between 0 and 10 inclusive
 Hints:
 Use random.choice() to a random element from a list.
 
+Ans:
 
+import random
+
+x = [i for i in range(11) if i%2==0]
+y = random.choice(x)
+print(y)
 
 
 
@@ -1682,7 +1746,13 @@ Please write a program to shuffle and print the list [3,6,7,8].
 Hints:
 Use shuffle() function to shuffle a list.
 
+Ans:
 
+import random
+
+list1 = [3,6,7,8]
+random.shuffle(list1)
+print(list1)
 
 
 
@@ -1692,9 +1762,15 @@ Please write a program to generate all sentences where subject is in ["I", "You"
 Hints:
 Use list[index] notation to get a element from a list.
 
+Ans:
 
-
-
+sub=["I","You"]
+verb=["Play","Love"]
+obj=["Hockey","Football"]
+for i in sub:
+    for j in verb:
+        for k in obj:
+            print(i,j,k)
 
 
 
@@ -1704,7 +1780,12 @@ Please write a program to print the list after removing delete even numbers in [
 Hints:
 Use list comprehension to delete a bunch of element from a list.
 
+Ans:
 
+list1 = [5,6,77,45,22,12,24]
+list2 = [x for x in list1 if not(x%2==0)]
+
+print(list2)
 
 
 
@@ -1716,7 +1797,11 @@ By using list comprehension, please write a program to print the list after remo
 Hints:
 Use list comprehension to delete a bunch of element from a list.
 
+Ans: 
+list1 = [12,24,35,70,88,120,155]
+list2 = [x for x in list1 if not(x%5==0 and x%7==0)]
 
+print(list2)
 
 
 
@@ -1729,6 +1814,15 @@ Hints:
 Use list comprehension to delete a bunch of element from a list.
 Use enumerate() to get (index, value) tuple.
 
+Ans:
+
+list1 = [12,24,35,70,88,120,155]
+list2 = [x for x in list1]
+for i in list1:
+    if list1.index(i)==0 or list1.index(i)==2 or list1.index(i)==4 or list1.index(i)==6:
+        list2.remove(i)
+
+print(list2)
 
 
 
@@ -1741,6 +1835,11 @@ By using list comprehension, please write a program generate a 3*5*8 3D array wh
 Hints:
 Use list comprehension to make an array.
 
+Ans:
+
+output = [[[0 for i in range(8) ] for j in range(5)] for k in range(3)]
+print(output)
+
 
 
 
@@ -1752,6 +1851,15 @@ Hints:
 Use list comprehension to delete a bunch of element from a list.
 Use enumerate() to get (index, value) tuple.
 
+Ans:
+
+list1 = [12,24,35,70,88,120,155]
+list2 = [x for x in list1]
+for i in list1:
+    if list1.index(i)==0 or list1.index(i)==4 or list1.index(i)==5:
+        list2.remove(i)
+
+print(list2)
 
 
 
@@ -1764,7 +1872,11 @@ By using list comprehension, please write a program to print the list after remo
 Hints:
 Use list's remove method to delete a value.
 
+Ans:
 
+list1 = [12,24,35,24,88,120,155]
+list2 = [i for i in list1 if i!=24]
+print(list2)
 
 
 
@@ -1777,6 +1889,14 @@ With two given lists [1,3,6,78,35,55] and [12,24,35,24,88,120,155], write a prog
 Hints:
 Use set() and "&=" to do set intersection operation.
 
+Ans:
+
+list1 = [1,3,6,78,35,55]
+list2 = [12,24,35,24,88,120,155]
+set1=set(list1)
+set2=set(list2)
+set3 = set1.intersection(set2)
+print(set3)
 
 
 
@@ -1786,6 +1906,11 @@ With a given list [12,24,35,24,88,120,155,88,120,155], write a program to print 
 Hints:
 Use set() to store a number of values without duplicate.
 
+Ans:
+
+list2 = [12,24,35,24,88,120,155,88,120,155]
+set1=set(list2)
+print(set1)
 
 
 Question:
@@ -1795,7 +1920,25 @@ Define a class Person and its two child classes: Male and Female. All classes ha
 Hints:
 Use Subclass(Parentclass) to define a child class.
 
+Ans:
 
+class Parent:
+    def getGender(self):
+        print("This is Parent")
+
+class Male(Parent):
+    def getGender(self):
+        print("This is Male")
+
+class Female(Parent):
+    def getGender(self):
+        print("This is Female")
+
+m = Male()
+m.getGender()
+
+f=Female()
+f.getGender()
 
 
 
@@ -1824,6 +1967,11 @@ Use dict to store key/value pairs.
 Use dict.get() method to lookup a key with default value.
 
 
+Ans:
+
+a = input("Enter String")
+x = dict((letter,a.count(letter)) for letter in set(a))
+print(x)
 
 
 
@@ -1848,10 +1996,10 @@ ris etov ot esir
 Hints:
 Use list[::-1] to iterate a list in a reverse order.
 
+Ans:
 
-
-
-
+x = input("Enter string: ")
+print(x[::-1])
 
 
 Question:
@@ -1870,13 +2018,11 @@ Helloworld
 Hints:
 Use list[::2] to iterate a list by step 2.
 
+Ans:
 
 
-
-
-
-
-
+x = input("Enter string: ")
+print(x[::2])
 
 Question:
 
@@ -1886,14 +2032,13 @@ Please write a program which prints all permutations of [1,2,3]
 Hints:
 Use itertools.permutations() to get permutations of list.
 
+Ans:
 
-
-
-
-
-
-
-
+import itertools
+x = itertools.permutations("123",3)
+for i in list(x):
+    print(i)
+	
 Question:
 
 Write a program to solve a classic ancient Chinese puzzle: 
@@ -1901,3 +2046,21 @@ We count 35 heads and 94 legs among the chickens and rabbits in a farm. How many
 
 Hint:
 Use for loop to iterate all possible solutions.
+
+Ans:
+
+def solve(numheads,numlegs):
+
+    ns='No solutions!'
+    for i in range(numheads+1):
+        j=numheads-i
+        if (2*i)+(4*j)==numlegs:
+            return i,j
+    return ns,ns
+
+
+numheads=35
+numlegs=94
+solutions=solve(numheads,numlegs)
+print (solutions)
+
